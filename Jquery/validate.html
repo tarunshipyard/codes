@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="jquery.min.js"></script>
+	<style>
+	*{
+	padding:0;
+	margin:0;
+	}
+	#maindiv{
+	width:1000px;
+	height:800px;
+	background:#f1f1f1;
+	margin:0 auto;
+	}
+	#content{
+	width:1000px;
+	height:600px;
+	}
+	#footer{
+	width:1000px;
+	height:100px;
+	background:blue;
+	}
+	#reg{
+	list-style:none;
+	width:500px;
+	background:yellow;
+	padding:40px;
+	box-sizing:border-box;
+	margin:0 auto;
+	}
+	#reg li{
+	margin:10px;
+	}
+	#reg input[type="text"],#reg input[type="password"]{
+	width:300px;
+	font-size:18px;
+	font-weight:bold;
+	padding:8px 10px;
+	}
+	#reg input[type="submit"]{
+	background:blue;
+	color:#fff;
+	border:none;
+	font-size:18px;
+	font-weight:bold;
+	
+	padding:8px 10px;
+	}
+	</style>
+	<script>
+	$(document).ready(function(){
+	
+		$("#sub").submit(function(){
+			var a=$("#unm").val();
+			a=$.trim(a);
+			if(a==""){
+				alert("plz enter name");
+				$("#unm").focus();
+				$("#unm").value="";
+				return false;
+			}
+			if(a.length<3){
+			alert("plz enter atleast 3 char name");
+				$("#unm").focus();
+				return false;
+			}
+			var m=$("#mob").val();
+			m=m.trim(m);
+			if(m==""){
+				alert("enter your mobile number");
+					$("#mob").value="";
+					$("#mob").focus();
+					return false;
+			}
+			if(isNaN(m)){
+				alert("plz valid number");
+				$("#mob").value="";
+				$("#mob").focus();
+				return false;
+			}
+			if(m.length<8){
+				alert("plz enter atleast 8 number");
+				return false;
+			}
+		});
+		
+	});
+	</script>
+</head>
+<body>
+	<div id="maindiv">
+		<div id="content">
+			<form action="process.php" method="get" id="sub">
+				<ul id="reg">
+					<li><input type="text" name="unm" placeholder="Enter Name" id="unm" /></li>
+					<li><input type="text" name="mob" placeholder="Mobile Number" id="mob" /></li>
+					<li><input type="text" name="eml" placeholder="Email Id" id="eml" /></li>
+					<li><input type="password" name="pwd" placeholder="Password" id="pwd" /></li>
+					<li><input type="password" name="rpwd" placeholder="Re-Password" id="rpwd" /></li>
+					<li><input type="submit" value="Register Now"/></li>
+				</ul>
+			</form>
+		</div>
+	</div>	
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+	<style>
+	*{
+	padding:0;
+	margin:0;
+	}
+	#maindiv{
+	width:1000px;
+	height:800px;
+	background:#f1f1f1;
+	margin:0 auto;
+	}
+	#content{
+	width:1000px;
+	height:600px;
+	}
+	#footer{
+	width:1000px;
+	height:100px;
+	background:blue;
+	}
+	#reg{
+	list-style:none;
+	width:500px;
+	background:yellow;
+	padding:40px;
+	box-sizing:border-box;
+	margin:0 auto;
+	}
+	#reg li{
+	margin:10px;
+	}
+	#reg input[type="text"],#reg input[type="password"]{
+	width:300px;
+	font-size:18px;
+	font-weight:bold;
+	padding:8px 10px;
+	}
+	#reg input[type="submit"]{
+	background:blue;
+	color:#fff;
+	border:none;
+	font-size:18px;
+	font-weight:bold;
+	
+	padding:8px 10px;
+	}
+	</style>
+	<script>
+	$(document).ready(function(){
+		$("#sub").submit(function(){
+			var a=$("#unm").val();
+			a=$.trim(a);
+			if(a==""){
+				alert("plz enter name");
+				$("#unm").focus();
+				$("#unm").value="";
+				return false;
+			}
+			if(a.length<3){
+			alert("plz enter atleast 3 char name");
+				$("#unm").focus();
+				return false;
+			}
+			var m=$("#mob").val();
+			m=m.trim(m);
+			if(m==""){
+				alert("enter your mobile number");
+					$("#mob").value="";
+					$("#mob").focus();
+					return false;
+			}
+		});
+		
+	});
+	</script>
+</head>
+<body>
+	<div id="maindiv">
+		<div id="content">
+			<a data-fancybox="gallery" href="images/large/image1.jpg"><img src="images/small/image1.png"></a>
+			<a data-fancybox="gallery" href="images/large/image2.jpg"><img src="images/small/image2.png"></a>
+			<a data-fancybox="gallery" href="images/large/image3.jpg"><img src="images/small/image3.png"></a>
+		</div>
+	</div>	
+</body>
+</html>

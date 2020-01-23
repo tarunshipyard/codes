@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="jquery.min.js"></script>
+	<link rel="stylesheet" href="ui/jquery-ui.min.css" />
+	<script src="ui/jquery-ui.min.js"></script>
+	<style>
+	*{
+	padding:0;
+	margin:0;
+	}
+	#maindiv{
+	width:1000px;
+	height:800px;
+	background:#f1f1f1;
+	margin:0 auto;
+	}
+	#content{
+	width:1000px;
+	height:600px;
+	}
+	#footer{
+	width:1000px;
+	height:100px;
+	background:blue;
+	}
+	#reg{
+	list-style:none;
+	width:500px;
+	background:yellow;
+	padding:40px;
+	box-sizing:border-box;
+	margin:0 auto;
+	}
+	#reg li{
+	margin:10px;
+	}
+	#reg input[type="text"],#reg input[type="password"]{
+	width:300px;
+	font-size:18px;
+	font-weight:bold;
+	padding:8px 10px;
+	}
+	#reg input[type="submit"]{
+	background:blue;
+	color:#fff;
+	border:none;
+	font-size:18px;
+	font-weight:bold;
+	
+	padding:8px 10px;
+	}
+	</style>
+	<script>
+	$(document).ready(function(){
+	
+		$("#dob").datepicker({
+			changeYear:true,
+			maxDate: "0D",
+			showAnim:'bounce',
+			dateFormat:'yy-mm-dd'
+		});
+		$( "#accordion" ).accordion();
+		
+	});
+	</script>
+</head>
+<body>
+	<div id="maindiv">
+		<div id="content">
+			<input type="text" name="dob" id="dob" placeholder="Date Of Birth" />
+			<br>
+			<div id="accordion">
+			  <h3>Section 1</h3>
+			  <div>
+				<p>
+				Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+				ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+				amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+				odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+				</p>
+			  </div>
+			  <h3>Section 2</h3>
+			  <div>
+				<p>
+				Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+				purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+				velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+				suscipit faucibus urna.
+				</p>
+			  </div>
+			  <h3>Section 3</h3>
+			  <div>
+				<p>
+				Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+				Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+				ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+				lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+				</p>
+				<ul>
+				  <li>List item one</li>
+				  <li>List item two</li>
+				  <li>List item three</li>
+				</ul>
+			  </div>
+			  <h3>Section 4</h3>
+			  <div>
+				<p>
+				Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+				et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+				faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+				mauris vel est.
+				</p>
+				<p>
+				Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+				Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+				inceptos himenaeos.
+				</p>
+			  </div>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

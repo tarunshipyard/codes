@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+  <script src="jquery.min.js"></script>
+  <link rel="stylesheet" href="bx/jquery.bxslider.css">
+<script src="bx/jquery.bxslider.min.js"></script>
+</head>
+<body>
+	<div class="slider">
+		<div><img src="1.jpg" alt="" width="100%"/></div>
+		<div><img src="2.jpg" alt="" width="100%"/></div>
+		<div><img src="3.jpg" alt="" width="100%"/></div>
+	</div>
+	
+	  <script>
+    $(document).ready(function(){
+      $('.slider').bxSlider({
+		auto:true,
+		pause:2000,
+		mode:'fade',
+	  });
+    });
+  </script>
+</body>
+</html>

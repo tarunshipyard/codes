@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="jquery.min.js"></script>
+	<script src="jquery.elevateZoom-3.0.8.min.js"></script>
+	<style>
+	/*set a border on the images to prevent shifting*/
+ #gallery_01 img{border:2px solid white;}
+ 
+ /*Change the colour*/
+ .active img{border:2px solid #333 !important;}
+	*{
+	padding:0;
+	margin:0;
+	}
+	#maindiv{
+	width:1000px;
+	height:800px;
+	background:#f1f1f1;
+	margin:0 auto;
+	}
+	#content{
+	width:1000px;
+	height:600px;
+	}
+	#footer{
+	width:1000px;
+	height:100px;
+	background:blue;
+	}
+	#reg{
+	list-style:none;
+	width:500px;
+	background:yellow;
+	padding:40px;
+	box-sizing:border-box;
+	margin:0 auto;
+	}
+	#reg li{
+	margin:10px;
+	}
+	#reg input[type="text"],#reg input[type="password"]{
+	width:300px;
+	font-size:18px;
+	font-weight:bold;
+	padding:8px 10px;
+	}
+	#reg input[type="submit"]{
+	background:blue;
+	color:#fff;
+	border:none;
+	font-size:18px;
+	font-weight:bold;
+	
+	padding:8px 10px;
+	}
+	</style>
+	<script>
+	$(document).ready(function(){
+$("#img_01").elevateZoom({gallery:'gal1', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
+
+//pass the images to Fancybox
+$("#img_01").bind("click", function(e) {  
+  var ez =   $('#img_01').data('elevateZoom');	
+	$.fancybox(ez.getGalleryList());
+  return false;
+});
+		
+	});
+	</script>
+</head>
+<body>
+	<div id="maindiv">
+		<div id="content">
+			
+			<img id="img_01" src="images/small/image1.png" data-zoom-image="images/large/image1.jpg"/>
+
+			<div id="gal1">
+			 
+			  <a href="#" data-image="images/small/image1.png" data-zoom-image="images/large/image1.jpg">
+				<img id="img_01" src="images/thumb/image1.jpg" />
+			  </a>
+
+			  <a href="#" data-image="images/small/image2.png" data-zoom-image="images/large/image2.jpg">
+				<img id="img_01" src="images/thumb/image2.jpg" />
+			  </a>
+
+			  <a href="#" data-image="images/small/image3.png" data-zoom-image="images/large/image3.jpg">
+				<img id="img_01" src="images/thumb/image3.jpg" />
+			  </a>
+
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

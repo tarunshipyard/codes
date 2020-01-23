@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	*{
+	padding:0;
+	margin:0;
+	}
+	#maindiv{
+	width:1000px;
+	height:800px;
+	background:#f1f1f1;
+	margin:0 auto;
+	}
+	#header{
+	width:1000px;
+	height:100px;
+	background:red;
+	}
+	#content{
+	width:1000px;
+	height:600px;
+	}
+	#footer{
+	width:1000px;
+	height:100px;
+	background:blue;
+	}
+	table {
+    border-collapse: collapse;
+    width: 100%;
+	border:1px solid red;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+	border-bottom:1px dashed red;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+	</style>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+	-->
+	<script src="jquery.min.js"></script>
+	<script>
+	$(document).ready( function() {
+		
+		$("#content table button").click( function() {
+			$(this).parent().remove();
+			//$(this).closest("tr").remove();
+		});
+		
+	});
+	</script>
+</head>
+<body>
+	<div id="maindiv">
+		<div id="header">
+			<button id="hd">Hide</button>
+			<button id="sh">Show</button>
+			<button id="tg">Toggle</button>
+			<button id="fi">FADEIN</button>
+			<button id="fo">FADEOUT</button>
+		</div>
+		<div id="content">
+			<table>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>City</th>
+					<th>Action</th>
+				</tr>
+				<tr>
+					<td>111</td>
+					<td>Rahul</td>
+					<td>Delhi</td>
+					<td>
+						<div style="background:yellow;padding:10px;">
+							<button>Delete</button>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>112</td>
+					<td>Modi</td>
+					<td>Gujraat</td>
+					<td>
+						<div style="background:yellow;padding:10px;">
+							<button>Delete</button>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>113</td>
+					<td>Mullayam</td>
+					<td>UP</td>
+					<td>
+						<div style="background:yellow;padding:10px;">
+							<button>Delete</button>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="footer"></div>
+	</div>
+</body>
+</html>

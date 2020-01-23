@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="fa/css/font-awesome.min.css">
+	<style>
+	*{
+	padding:0;
+	margin:0;
+	}
+	#maindiv{
+	width:1000px;
+	height:800px;
+	background:#f1f1f1;
+	margin:0 auto;
+	}
+	#header{
+	width:1000px;
+	height:100px;
+	background:red;
+	}
+	#content{
+	width:1000px;
+	height:600px;
+	}
+	#c1{
+	width:500px;
+	height:600px;
+	background:yellow;
+	float:left;
+	}
+	#c2{
+	width:500px;
+	height:600px;
+	background:green;
+	float:left;
+	}
+	#footer{
+	width:1000px;
+	height:100px;
+	background:aqua;
+	font-size:50px;
+	text-align:center;
+	color:red;
+	}
+	</style>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+	-->
+	<script src="jquery.min.js"></script>
+	<script>
+	$(document).ready( function() {
+		$("#hd").click( function() {
+			$("#content").animate({"marginLeft":"500px"},5000,function(){
+				alert("animate ho gya");
+			});
+			
+		});
+	});
+	</script>
+</head>
+<body>
+	<div id="maindiv">
+		<div id="header">
+			<button id="hd">Hide</button>
+		</div>
+		<div id="content">
+			<div id="c1">
+				<h1>aise hi kuch bhi</h1>
+			</div>
+			<div id="c2"></div>
+		</div>
+		<div id="footer">
+			<i class="fa fa-heart"></i>
+		</div>
+	</div>
+	<script>
+		function hb(){
+			$("#footer").animate({"fontSize":"52px"},100,function(){
+				$("#footer").animate({"fontSize":"50px"},200);
+			});
+		}
+		setInterval(function(){ hb(); },400);
+	</script>
+</body>
+</html>
