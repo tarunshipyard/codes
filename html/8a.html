@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title></title>
+	<style>
+	div{
+	background:yellow;
+	width:300px;
+	margin0 auto;
+	text-align:center;
+	}
+	
+	</style>
+</head>
+<body>
+	<div class="ran">
+		<i class="material-icons" style="font-size:216px;color:blue;" id="ajay">brightness_3</i>
+	</div>
+	<button onclick="rr()">on</button>
+	<button onclick="rra()">off</button><br><br>
+	
+	<input placeholder="user" id="us">
+	<input placeholder="claend" id="cl"><br>
+	<br>
+	<input placeholder="mainclaend" id="maincl" oninput="ranjana">
+	
+	<script>
+	function rr(){
+	var s=document.getElementById("ajay");
+	s.style.color="white";
+	}
+		function rra(){
+	var s=document.getElementById("ajay");
+	s.style.color="black";
+	}
+	
+	function ranjana(){
+	var x=document.getElementById("maincl").value;
+	if(x/10){
+	
+	}
+	}
+	</script>
+</body>
+</html>
