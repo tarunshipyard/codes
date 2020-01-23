@@ -1,0 +1,116 @@
+	<!DOCTYPE HTML>
+	<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+			margin:0px;
+			padding:0px;
+			}
+			.maindiv{
+			width:1000px;
+			height:800px;
+			background:red;
+			margin:0px auto;
+			}
+			.header{
+			height:100px;
+			width:1000px;
+			background:aqua;
+			}
+			.mid{
+			height:600px;
+			width:1000px;
+			background:green;
+			}
+			.footer{
+			width:1000px;
+			height:100px;
+		    background:blue;
+			}
+			#nav{
+			list-style:none;
+			float:right;
+			margin-top:35px;
+			}
+			#nav>li{
+			float:left;
+			margin-left:1px;
+			position:relative;
+			}
+			#nav>li>a{
+			text-decoration:none;
+			color:#fff;
+			background:#000;
+			font-size:18px;
+			font-weight:bold;
+			padding:8px 10px;
+			}
+			.subnav{
+			list-style:none;
+			background:yellow;
+			padding:1px;
+			min-width:200px;
+			position:absolute;
+			top:27px;
+			left:0px;
+			display:none;
+			}
+			.subnav>li{
+			background:red;
+			padding:7px 10px;
+			margin-bottom:1px;
+			text-align:center;
+			}
+			.subnav>li>a{
+			text-decoration:none;
+			font-size:18px;
+			font-weight:bold;
+			color:#fff;
+			}
+			#nav>li:hover ul{
+			display:block;
+			}
+		</style>
+	</head>
+	<body>
+	<h6 style="font-size:32px">hello</h6>
+	<h1>hello</h1>
+		<div class="maindiv">
+			<div class="header">
+				<ul id="nav">
+					<li><a href="#">Home</a></li>
+					<li>
+						<a href="#">About</a>
+						<ul class="subnav">
+							<li><a href="#">SubMenu 1</a></li>
+							<li><a href="#">SubMenu 2</a></li>
+							<li><a href="#">SubMenu 3</a></li>
+							<li><a href="#">SubMenu 4</a></li>
+							<li><a href="#">SubMenu 5</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Career</a></li>
+					<li>
+						<a href="#">Services</a>
+						<ul class="subnav">
+							<li><a href="#">SSubMenu 1</a></li>
+							<li><a href="#">SSubMenu 2</a></li>
+							<li><a href="#">SSubMenu 3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Contact Us</a>
+						<ul class="subnav">
+							<li><a href="#">SSubMenu 1</a></li>
+							<li><a href="#">SSubMenu 2</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="mid"></div>
+			<div class="footer"></div>
+			
+		</div>
+	</body>
+	</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	*{
+	padding:0;
+	margin:0;
+	}
+	#maindiv{
+	width:1000px;
+	height:2000px;
+	margin:0 auto;
+	}
+	#header{
+	width:1000px;
+	height:150px;
+	background:red;
+	}
+	.logo{
+	width:1000px;
+	height:100px;
+	background:white;
+	}
+	.icon{
+	float:right;
+	}
+	.icon ul{
+	list-style:none;
+	margin-top:35px;
+	}
+	.icon ul>li{
+	float:left;
+	margin-left:5px;
+	text-align:center;
+	}
+	.icon ul>li>a{
+	text-decoration:none;
+	background:#0066bf;
+	color:white;
+	font-size:19px;
+	font-weight:bold;
+	width:40px;
+	height:40px;
+	line-height:40px;
+	border-radius:50%;
+	}
+	.menu{
+	width:1000px;
+	height:50px;
+	background:#0066bf;
+	}
+	.nav{
+	list-style:none;
+	float:left;
+	margin:15px 0px;
+	}
+	.nav>li{
+	float:left;
+	margin-right:1px;
+	position:relative;
+	}
+	.nav>li>a{
+	text-decoration:none;
+	color:white;
+	text-transform: capitalize;
+    font-weight: bold;
+    font-size: 17px;
+	padding:15px 20px;
+	}
+	.nav>li>a:hover{
+	background:#000;
+	}
+	.subnav{
+	list-style:none;
+	width:200px;
+	background:white;
+	padding:1px;
+	position:absolute;
+	top:35px;
+	left:0;
+	display:none;
+	}
+	.subnav>li{
+	background:white
+	margin-bottom: 1px;
+	padding: 8px 17px;
+	cursor:pointer;
+	}
+	.subnav>li>a{
+	text-decoration:none;
+	text-transform:capitalize;
+	color:green;
+	font-weight:bold;
+	font-size:17px;
+	}
+	.subnav>li:hover{
+	background:black;
+	}
+	.subnav>li>a:hover{
+	color:white;
+	}
+	.nav>li:hover ul{
+	display:block;
+	}
+	#content{
+	width:1000px;
+	height:1320px;
+	}
+	.banner{
+	width:1000px;
+	height:400px;
+	}
+	.banner img{
+	width:990px;
+	height:390px;
+	border: 5px solid #ccc;
+	}
+	.panel-success{
+	width:300px;
+	height: 230px;
+	border:1px solid #dff0d8;
+	float:left;
+	margin: 15.5px;
+	border-radius: 5px;
+	}
+	.panel-header{
+	background:#dff0d8;
+	padding:20px 0;
+	}
+	.panel-header h3{
+	font-weight:300;
+	text-align:center;
+	font-size:24px;}
+	
+	#footer{
+	width:1000px;
+	height:530px;
+	background: #f1f1f1;
+	}
+	.section1{
+	width:300px;
+	height:400px;
+	float:left;
+	margin: 45px 0 0 0;
+	margin-right: 40px;
+	margin-left: 18px;
+	}
+	#footer .section1 h3{
+	margin:10px 0;
+	font-size: 26px;
+    font-weight: 400;
+	}
+	#footer .section1 ul{
+	margin-top: 15px;
+	}
+	#footer .section1 ul li{
+	margin-bottom:7px;
+	}
+	#footer .section1 ul li a{
+	text-decoration:none;
+	}
+	.section2{
+	width:300px;
+	height:400px;
+	float:left;
+	margin: 45px 0 0 0;
+	margin-right:39px;
+	}
+	.section2 h3{
+	margin:10px 0;
+	font-size: 26px;
+    font-weight: 400;
+	}
+	.section2 p{
+	text-align: justify;
+    line-height: 22px;
+	}
+	.section3{
+	width:300px;
+	height:400px;
+	float:left;
+	margin: 45px 0 0 0;
+	}
+	#footer .section3 h3{
+	margin:10px 0;
+	font-size: 26px;
+    font-weight: 400;
+	}
+	#footer .section3 p{
+	margin:10px 0;
+	line-height: 22px;
+	}
+	#footer .section3 strong{
+	line-height: 30px;
+	}
+	</style>
+</head>
+<body>
+	<div id="maindiv">
+		<div id="header">
+			<div class="logo">
+				<img src="image\technothrive.png">
+				<div class="icon">
+					<ul>
+						<li><a href="#" class="fa fa-facebook"></a></li>
+						<li><a href="#" class="fa fa-twitter"></a></li>
+						<li><a href="#" class="fa fa-pinterest"></a></li>
+						<li><a href="#" class="fa fa-google"></a></li>
+						<li><a href="#" class="fa fa-linkedin"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="menu">
+				<ul class="nav">
+					<li><a href="#">home</a></li>
+					<li><a href="#">about us</a></li>
+					<li>
+						<a href="#">services
+							<i class="fa fa-caret-down" style="padding: 0px 5px;"></i>
+						</a>
+							<ul class="subnav">
+								<li><a href="#">website designing</a></li>
+								<li><a href="#">mobile app solution</a></li>
+								<li><a href="#">website developer</a></li>
+								<li><a href="#">seo services</a></li>
+							</ul>
+					</li>
+					<li>
+						<a href="#">training
+							<i class="fa fa-caret-down" style="padding: 0px 5px;"></i>
+						</a>
+							<ul class="subnav">
+								<li><a href="#">php training</a></li>
+								<li><a href="#">website training</a></li>
+								<li><a href="#">node js training</a></li>
+								<li><a href="#">angularjs training</a></li>
+								<li><a href="#">python training</a></li>
+								<li><a href="#">c c++ training</a></li>
+								<li><a href="#">dot net training</a></li>
+							</ul>
+					</li>
+					<li><a href="#">contact us</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="content">
+			<div class="banner">
+				<img src="image\tts.jpg">
+			</div>
+			<h2 style="background:#e87107;text-align:center;padding:5px 0px;margin:10px 0px;color:white;border-radius:15px;margin:26px 0px 0px;text-shadow: 2px -2px 3px green;word-spacing: 5px;letter-spacing: .5px;">A One Brick Infracon Pvt. Ltd. Initiative</h2>
+			<div class="panel-success">
+				<div class="panel-header">
+					<h3>
+						<i class="fa fa-fw fa-check"></i>
+						Website Development
+					</h3>
+				</div>
+				<div class="panel-body">
+					<p style="text-align:justify;width: 250px; margin: 21px 20px;font-size: 16px;">technothrive solutions TTS–technothrive.com provides scalable website development in different advance Technologies to their clients.</p>
+					<p><a href="#" style="text-decoration:none;margin-left:20px;color:white;background:blue;padding:8px 12px;border-radius: 5px;">read more</a></p>
+				</div>
+			</div>
+			<div class="panel-success">
+				<div class="panel-header">
+					<h3>
+						<i class="fa fa-fw fa-cogs"></i>
+						eCommerce Development
+					</h3>
+				</div>
+				<div class="panel-body">
+					<p style="text-align:justify;width: 250px; margin: 21px 20px;font-size: 16px;">Techno Thrive Solutions provides the most innovative custom website designing and development to meet their client’s needs.</p>
+					<p><a href="#" style="text-decoration:none;margin-left:20px;color:white;background:green;padding:8px 12px;border-radius: 5px;">read more</a></p>
+				</div>
+			</div>
+			<div class="panel-success">
+				<div class="panel-header">
+					<h3>
+						<i class="fa fa-fw fa-compass"></i>
+						Mobile App Development
+					</h3>
+				</div>
+				<div class="panel-body">
+					<p style="text-align:justify;width: 250px; margin: 21px 20px;font-size: 16px;">TechnoThrive offers Mobile Applications Development Services that save 50% on App Development Cost with minimum rework efforts</p>
+					<p><a href="#" style="text-decoration:none;margin-left:20px;color:white;background:red;padding:8px 12px;border-radius: 5px;">read more</a></p>
+				</div>
+			</div>
+			<div class="panel-success">
+				<div class="panel-header">
+					<h3>
+						<i class="fa fa-fw fa-check"></i>
+						SEO Marketing
+					</h3>
+				</div>
+				<div class="panel-body">
+					<p style="text-align:justify;width: 250px; margin: 21px 20px;font-size: 16px;">Technothrive drives traffic to your website by achieving page 1 rankings in search engines for valuable keywords for clients better business.</p>
+					<p><a href="#" style="text-decoration:none;margin-left:20px;color:black;background:white;border:1px solid green;padding:8px 12px;border-radius: 5px;">read more</a></p>
+				</div>
+			</div>
+			<div class="panel-success">
+				<div class="panel-header">
+					<h3>
+						<i class="fa fa-fw fa-gift"></i>
+						Servers and Domains
+					</h3>
+				</div>
+				<div class="panel-body">
+					<p style="text-align:justify;width: 250px; margin: 21px 20px;font-size: 16px;">Techno Thrive Solutions provides the most innovative custom server, domain and mail server support to meet their client’s needs.</p>
+					<p><a href="#" style="text-decoration:none;margin-left:20px;color:white;background:red;padding:8px 12px;border-radius: 5px;">read more</a></p>
+				</div>
+			</div>
+			<div class="panel-success">
+				<div class="panel-header">
+					<h3>
+						<i class="fa fa-fw fa-compass"></i>
+						Incredible Support
+					</h3>
+				</div>
+				<div class="panel-body">
+					<p style="text-align:justify;width: 250px; margin: 21px 20px;font-size: 16px;">Our Support team always ready to give quick and easy support to clients. to enhance your business online presence is our main motive.</p>
+					<p><a href="#" style="text-decoration:none;margin-left:20px;color:white;background:blue;;padding:8px 12px;border-radius: 5px;">read more</a></p>
+				</div>
+			</div>
+			<hr style="margin: 15px 0; width:990px;">
+			<p style="margin: 30px 0;text-align: justify;line-height: 22px;">
+				Technothrive solutions – technothrive.com – Techno Thrive Solutions has expertise in providing best IT, Website and Mobile Apps Development Solutions based upon distinct needs of your business segments. technothrive solutions TTS – technothrive.com give integrated and best it solutions for clients diverse business needs. Techno thrive solutions DELIVERED projects ACROSS DIFFERENT TECHNOLOGIES like Core php, wordpress, Joomla, Drupal, Magento, Opencart, Zend framework, Cakephp, Yii, Smarty and also written many web services for mobile devices.
+			</p>
+			<h2 style="font-size: 28px;font-weight: 400;margin-bottom: 28px;">technothrive solutions TTS – technothrive.com</h2>
+			<ul style="margin: 10px 15px;">
+				<li style="margin: 5px 0;">Website Designing and  Development</li>
+				<li style="margin: 5px 0;">Boost Website Traffic Rapidly</li>
+				<li style="margin: 5px 0;">Reach a Wider Audience in area</li>
+				<li style="margin: 5px 0;">Enhance Website Presence & Conversions</li>
+			</ul>
+		</div>
+		<div id="footer">
+			<div class="section1">
+				<h3>Quick Links</h3>
+				<ul>
+					<li><a href="#">Android Training in Allahabad</a></li>
+					<li><a href="#">SP3D Piping Training in Allahabad</a></li>
+					<li><a href="#">Node JS Training in Allahabad</a></li>
+					<li><a href="#">AngularJS Training in Allahabad</a></li>
+					<li><a href="#">Web Designing Training in Allahabad</a></li>
+					<li><a href="#">Dot NET Training in Allahabad</a></li>
+					<li><a href="#">PHP Training in Allahabad</a></li>
+					<li><a href="#">C C++ Training in allahabad</a></li>
+				</ul>
+			</div>
+			<div class="section2">
+				<h3>TTS Learning Center</h3>
+				<p>Technothive Solutions provide best web designing, SEO, Digital Marketing and website development services in Delhi NCR and Allahabad. TTS technothrive solutions Provides best PHP Training, Web Designing Training, Javascript ,C C++ , NodeJS, Angular JS, Core Java, Advance Java, Android and Dot Net Training with live projects, Project Documents in Allahabad and Noida. Technothrive also provides 100% Placement Assistance to our Students. technothrive.com provides best industrial summer training PROJECT and Internship in Allahabad for B.Tech, BE, BCA, MCA, BSc IT, MSc Students.</p>
+			</div>
+			<div class="section3">
+				<h3>Contact Details</h3>
+				<p>
+				<strong>Noida Address:</strong><br>
+				E19, Sector-5<br>
+				Noida-201301, UP, India
+				</p>
+				<p>
+				<strong>Allahabad Address:</strong><br>
+				Civil Lines & Sohbatiyabag<br>
+				Allahabad UP, India
+				</p>
+				<p><strong>Call - 07291851836</strong></p>
+				<p><strong>Email - info@technothrive.com</strong></p>
+			</div>
+			<div style="display: block;clear: both;border: 1;border-top: 1px dashed black;width:400px;margin:0 auto;"><p style="text-align:center;margin-top:25px;">technothrive solutions A Web Designing Company</p></div>
+		</div>
+	</div>
+</body>
+</html>
