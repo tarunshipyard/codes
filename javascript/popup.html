@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	*{
+	padding:0;
+	margin:0;
+	}
+	#maindiv{
+	width:1000px;
+	height:800px;
+	background:#f1f1f1;
+	margin:0 auto;
+	}
+	#header{
+	height:100px;
+	background:green;
+	}
+	#content{
+	height:700px;
+	background:yellow;
+	text-align:center;
+	font-weight:bold;
+	line-height:30px;
+	}
+	#overlay{
+	width:100%;
+	height:100%;
+	background:#000;
+	position:fixed;
+	opacity:0.7;
+	display:none;
+	}
+	#popup{
+	width:500px;
+	height:400px;
+	background:#fff;
+	position:fixed;
+	left:50%;
+	margin-left:-250px;
+	top:50%;
+	margin-top:-200px;
+	display:none;
+	}
+	#cls{
+	float:right;
+	margin-right:-30px;
+	background:red;
+	color:#fff;
+	font-size:17px;
+	font-weight:bold;
+	border:none;
+	padding:4px;
+	width:30px;
+	}
+	</style>
+	<script>
+	function openpp(){
+		document.getElementById("overlay").style.display="block";
+		document.getElementById("popup").style.display="block";
+	}
+	function closepp(){
+		document.getElementById("overlay").style.display="none";
+		document.getElementById("popup").style.display="none";
+	}
+	</script>
+</head>
+<body>
+	<div id="overlay"></div>
+	<div id="popup">
+		<button id="cls" onclick="closepp();">X</button>
+	</div>
+	<div id="maindiv">
+		<div id="header">
+			<button onclick="openpp();">Login</button>
+		</div>
+		<div id="content">
+		</div>
+	</div>
+</body>
+</html>

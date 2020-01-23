@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	*{
+	padding:0;
+	margin:0;
+	}
+	#maindiv{
+	width:1000px;
+	height:800px;
+	background:#f1f1f1;
+	margin:0 auto;
+	}
+	#header{
+	width:1000px;
+	height:100px;
+	background:red;
+	}
+	#content{
+	width:1000px;
+	height:600px;
+	}
+	#c1{
+	width:500px;
+	height:600px;
+	background:yellow;
+	float:left;
+	}
+	#c2{
+	width:500px;
+	height:600px;
+	background:green;
+	float:left;
+	}
+	#footer{
+	width:1000px;
+	height:100px;
+	background:blue;
+	}
+	</style>
+	
+</head>
+<body>
+	<div id="maindiv">
+		<div id="header"></div>
+		<div id="content">
+			<div id="c1">
+				<h1>aise hi kuch bhi</h1>
+				<script>
+					document.write("<h1>bhaludada</h1>");
+				</script>
+			</div>
+			<div id="c2"></div>
+		</div>
+		<div id="footer"></div>
+	</div>
+	<script>
+	alert("hello");
+	document.getElementById("maindiv").innerHTML="<h2>Mai innerHTML se aaya hu</h2>";
+	console.log("mai console.log se aa raha hu");
+	</script>
+</body>
+</html>

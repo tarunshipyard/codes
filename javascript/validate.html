@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	*{
+	padding:0;
+	margin:0;
+	}
+	#maindiv{
+	width:1000px;
+	height:800px;
+	background:#f1f1f1;
+	margin:0 auto;
+	}
+	#content{
+	width:1000px;
+	height:600px;
+	}
+	#footer{
+	width:1000px;
+	height:100px;
+	background:blue;
+	}
+	#reg{
+	list-style:none;
+	width:500px;
+	background:yellow;
+	padding:40px;
+	box-sizing:border-box;
+	margin:0 auto;
+	}
+	#reg li{
+	margin:10px;
+	}
+	#reg input[type="text"],#reg input[type="password"]{
+	width:300px;
+	font-size:18px;
+	font-weight:bold;
+	padding:8px 10px;
+	}
+	#reg input[type="submit"]{
+	background:blue;
+	color:#fff;
+	border:none;
+	font-size:18px;
+	font-weight:bold;
+	
+	padding:8px 10px;
+	}
+	</style>
+	<script>
+	function validate(){
+		var u=document.getElementById("unm").value;
+		u=u.trim();
+		if(u==""){
+			alert("plz enter name");
+			document.getElementById("unm").value="";
+			document.getElementById("unm").focus();
+			return false;
+		}
+		if(u.length<3){
+			alert("plz enter atleast 3 char name");
+			document.getElementById("unm").value="";
+			document.getElementById("unm").focus();
+			return false;
+		}
+		
+		var m=document.getElementById("mob").value;
+		m=m.trim();
+		if(m==""){
+			alert("plz enter Mobile Number");
+			document.getElementById("mob").value="";
+			document.getElementById("mob").focus();
+			return false;
+		}
+		if( isNaN(m) ){
+			alert("Numeric digits only");
+			document.getElementById("mob").value="";
+			document.getElementById("mob").focus();
+			return false;
+		}
+		if(m.length!=10){
+			alert("Enter only 10 digit Mobile Number");
+			document.getElementById("mob").focus();
+			return false;
+		}
+		if(m[0]<6){
+			alert("Enter a valid Number");
+			document.getElementById("mob").focus();
+			return false;
+		}
+		
+		var em=document.getElementById("eml").value;
+		em=em.trim();
+		if(em==""){
+			alert("plz enter Email");
+			document.getElementById("eml").value="";
+			document.getElementById("eml").focus();
+			return false;
+		}else{ 
+			var atpos = em.indexOf("@");
+			var dotpos = em.lastIndexOf(".");
+			if (atpos<1 || dotpos<atpos+2 || dotpos+2>=em.length) {
+				alert("Not a valid e-mail address");
+				return false;
+			}
+		}
+		var p=document.getElementById("pwd").value;
+		p=p.trim();
+		if(p==""){
+			alert("plz Choose password");
+			document.getElementById("pwd").value="";
+			document.getElementById("pwd").focus();
+			return false;
+		}
+		if(p.length<4){
+			alert("plz Choose at least 4 char password");
+			document.getElementById("pwd").value="";
+			document.getElementById("pwd").focus();
+			return false;
+		}
+		var rp=document.getElementById("rpwd").value;
+		rp=rp.trim();
+		if(rp!=p){
+			alert("Re enter same password");
+			document.getElementById("rpwd").value="";
+			document.getElementById("rpwd").focus();
+			return false;
+		}
+		
+	}
+	</script>
+</head>
+<body>
+	<div id="maindiv">
+		<div id="content">
+			<form action="process.php" method="post" onsubmit="return validate();">
+				<ul id="reg">
+					<li><input type="text" name="unm" placeholder="Enter Name" id="unm" /></li>
+					<li><input type="text" name="mob" placeholder="Mobile Number" id="mob" /></li>
+					<li><input type="text" name="eml" placeholder="Email Id" id="eml" /></li>
+					<li><input type="password" name="pwd" placeholder="Password" id="pwd" /></li>
+					<li><input type="password" name="rpwd" placeholder="Re-Password" id="rpwd" /></li>
+					<li><input type="submit" value="Register Now" /></li>
+				</ul>
+			</form>
+		</div>
+	</div>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	<select>
+		<option>select year</option>
+		
+		<script>
+			for(i=2019;i>=1947;i--){
+				document.write("<option>"+i+"</option>")
+			}
+		</script>
+	</select>
+	
+	<ul>
+		<li></li>
+	</ul>
+	<script>
+	a="*";
+	for(i=1;i<=10;i++){
+		document.write(a+"<br>");
+		a+="*";
+	}
+	</script>
+
+<script>
+	a="";
+	for(i=10;i>=1;i--){
+		document.write(a+"<br>");
+		a+="*";
+	}
+	</script>	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	.main{
+	width:1000px;
+	height:500px;
+	background:red;
+	margin:0 auto;}
+	
+	#overlay{
+	width:100%;
+	height:100%;
+	background:black;
+	opacity:0.5;
+	position:absolute;
+	top:0;
+	left:0;  		
+	}
+	
+	#popap{
+	background:white;
+	width:400px;
+	height:400px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-200px 0px 0px -200px;
+	}
+	</style>
+	<script>
+	function paop(){
+	var a=document.getElementById("overlay").style.display="none";
+	var b=document.getElementById("popap").style.display="none";
+	}
+	function popap(){
+	var a=document.getElementById("overlay").style.display="block";
+	var b=document.getElementById("popap").style.display="block";
+	}
+	</script>
+</head>
+<body>
+	<div id="overlay"></div>
+	<div class="main"><button onclick="popap()">Login</button></div>
+	<div id="popap"><button onclick="paop()">X</button></div>
+</body>
+</html>

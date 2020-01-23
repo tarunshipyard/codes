@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	*{
+	padding:0;
+	margin:0;
+	}
+	#maindiv{
+	width:1000px;
+	height:800px;
+	background:#f1f1f1;
+	margin:0 auto;
+	}
+	</style>
+	<script>
+	function validate(){
+		var u=document.getElementById("unm").value;
+		u=u.trim();
+		if(u==""){
+			alert("plz enter name");
+			document.getElementById("unm").value="";
+			document.getElementById("unm").focus();
+			return false;
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="maindiv">
+		<h1 id="brd">salaman weds Katreena</h1>
+	</div>
+	<script>
+		a=0;
+		function changeColor(){
+			switch( a ){
+				case 0:{
+					document.getElementById("brd").style.color="red";
+					a=1;
+					break;
+				}
+				case 1:{
+					document.getElementById("brd").style.color="yellow";
+					a=2;
+					break;
+				}
+				case 2:{
+					document.getElementById("brd").style.color="green";
+					a=3;
+					break;
+				}
+				case 3:{
+					document.getElementById("brd").style.color="blue";
+					a=0;
+					break;
+				}
+			}
+		}
+		setInterval( function(){ changeColor(); }, 300 );
+	</script>
+</body>
+</html>

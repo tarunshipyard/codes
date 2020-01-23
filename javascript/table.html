@@ -1,0 +1,87 @@
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	*{
+	padding:0;
+	margin:0;
+	}
+	#maindiv{
+	width:1000px;
+	height:800px;
+	background:#f1f1f1;
+	margin:0 auto;
+	}
+	#header{
+	height:100px;
+	background:green;
+	}
+	#content{
+	height:700px;
+	background:yellow;
+	text-align:center;
+	font-weight:bold;
+	line-height:30px;
+	}
+	</style>
+	<script>
+	function ct(){
+		var n=document.getElementById("num").value;
+		n=n.trim();
+		if(n==""){
+			alert("plz enter number");
+			document.getElementById("num").value="";
+			document.getElementById("num").focus();
+		}
+		if( isNaN(n) ){
+			alert("enter a valid number");
+			document.getElementById("num").value="";
+			document.getElementById("num").focus();
+		}else{
+			var temp="";
+			for(i=1;i<=10;i++){
+				temp=temp + n + " X " + i + " = " + n*i + "<br>";
+				
+			}
+			document.getElementById("content").innerHTML=temp;
+		}
+	}
+	
+	function ft(){
+		var n=document.getElementById("num").value;
+		n=n.trim();
+		if(n==""){
+			alert("plz enter number");
+			document.getElementById("num").value="";
+			document.getElementById("num").focus();
+		}
+		if( isNaN(n) ){
+			alert("enter a valid number");
+			document.getElementById("num").value="";
+			document.getElementById("num").focus();
+		}
+		else{
+			var fact=1;
+			for(i=n;i>=1;i--){
+				fact=fact*i;
+				
+			}
+			document.getElementById("content").innerHTML=fact;
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="maindiv">
+		<div id="header">
+			<input type="text" placeholder="Enter a Number" id="num">
+			<button onclick="ct();">Create Table</button>
+			<button onclick="ft();">Factorial</button>
+		</div>
+		<div id="content"></div>
+	</div>
+</body>
+</html>
