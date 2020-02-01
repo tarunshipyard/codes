@@ -1,0 +1,243 @@
+get_header()-->tells WordPress to get the header.php file and include it in the current theme file
+get_footer()-->tells WordPress to get the footer.php file.
+the_title() –-> tells WordPress to get the title of the page or post from the database and include it.
+bloginfo( 'name' ) –-> tells WordPress to get the blog title out of the database and include it in the template file.
+
+Why Use Template Tags #Why Use Template Tags
+By encapsulating all of the code for a particular chunk of content, template tags make it very easy to include various pieces of a template in a theme file and also to maintain the theme.
+It is far easier to create one header.php file and have all of your theme templates like single.php, page.php, front-page.php, etc. reference that one theme file using get_header() than copying and pasting the code into each theme file. It also makes maintenance easier. Whenever you make a change in your header.php file, the change is automatically carried over into all of your other theme files.
+Another reason to use template tags is to display dynamic data, i.e. data from the database. In your header, you could manually include the title tag, like so:
+bloginfo( 'name' ); --> print blog name 
+bloginfo( 'version' ); --> print blog version
+if ( have_posts() ) :
+    while ( have_posts() ) :
+        the_post(); //php “loop” that generates the pages users see based upon the instructions inside of the loop.
+endwhile;
+else :
+    _e( 'Sorry, no posts matched your criteria.', 'devhub' );
+endif;
+the_content() --> show content of blogpage/post Display the post content.
+
+the_excerpt() --> SHort version of post content Display the post excerpt.
+// you can control excerpt length default is 55 word
+To change excerpt length to 20 words using the excerpt_length #filter //add the following code to the functions.php
+function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+Make the “read more” string link to the post:
+Place this in a theme’s functions.php to make the “read more” link to the post-
+function wpdocs_excerpt_more( $more ) {
+    if ( ! is_single() ) {
+        $more = sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
+            get_permalink( get_the_ID() ),
+            __( 'Read More', 'textdomain' )
+        );
+    }
+ 
+    return $more;
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+//This link will not appear on a new line. To achieve this, modify the CSS for the .read-more class.
+Replaces the_content() tag with the_excerpt() when on archive or category pages.
+<?php if ( is_category() || is_archive() ) {
+    the_excerpt();
+} else {
+    the_content();
+} ?>
+wp_list_pages() //Retrieve or display a list of pages (or hierarchical post type items) in list (li) format.
+wp_list_categories() //Display or retrieve the HTML list of categories.
+//Display Categories Assigned to a Post
+$taxonomy = 'category';
+ 
+// Get the term IDs assigned to post.
+$post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
+ 
+// Separator between links.
+$separator = ', ';
+ 
+if ( ! empty( $post_terms ) && ! is_wp_error( $post_terms ) ) {
+ 
+    $term_ids = implode( ',' , $post_terms );
+ 
+    $terms = wp_list_categories( array(
+        'title_li' => '',
+        'style'    => 'none',
+        'echo'     => false,
+        'taxonomy' => $taxonomy,
+        'include'  => $term_ids
+    ) );
+ 
+    $terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
+ 
+    // Display post categories.
+    echo  $terms;
+}
+next_post()
+previous_post()
+The basic loop is:
+<?php 
+if ( have_posts() ) : 
+    while ( have_posts() ) : the_post(); 
+        // Display post content
+    endwhile; 
+endif; 
+?>
+//The have_posts() function checks whether there are any posts.
+If there are posts, a while loop continues to execute as long as the condition in the parenthesis is logically true. As long as have_posts() continues to be true, the loop will continue.
+ALways use loop after header
+What will LOOP DISPLAY ??
+next_post_link() – a link to the post published chronologically after the current post
+previous_post_link() – a link to the post published chronologically before the current post
+the_category() – the category or categories associated with the post or page being viewed
+the_author() – the author of the post or page
+the_content() – the main content for a post or page
+the_excerpt() – the first 55 words of a post’s main content followed by an ellipsis (…) or read more link that goes to the full post. You may also use the “Excerpt” field of a post to customize the length of a particular excerpt.
+the_ID() – the ID for the post or page
+the_meta() – the custom fields associated with the post or page
+the_shortlink() – a link to the page or post using the url of the site and the ID of the post or page
+the_tags() – the tag or tags associated with the post
+the_title() – the title of the post or page
+the_time() – the time or date for the post or page. This can be customized using standard php date function formatting.
+You can also use conditional tags, such as:
+
+is_home() – Returns true if the current page is the homepage
+is_admin() – Returns true if inside Administration Screen, false otherwise
+is_single() – Returns true if the page is currently displaying a single post
+is_page() – Returns true if the page is currently displaying a single page
+is_page_template() – Can be used to determine if a page is using a specific template, for example: is_page_template('about-page.php')
+is_category() – Returns true if page or post has the specified category, for example: is_category('news')
+is_tag() – Returns true if a page or post has the specified tag
+is_author() – Returns true if inside author’s archive page
+is_search() – Returns true if the current page is a search results page
+is_404() – Returns true if the current page does not exist
+has_excerpt() – Returns true if the post or page has an excerpt
+
+Most blogs have a blog archive page, which can show a number of things including the post title, thumbnail, and excerpt. The example below shows a simple loop that checks to see if there are any posts and, if there are, outputs each post’s title, thumbnail, and excerpt. If no posts exists, it displays the message in parentheses.
+
+<?php 
+if ( have_posts() ) : 
+    while ( have_posts() ) : the_post(); 
+        the_title( '<h2>', '</h2>' ); 
+        the_post_thumbnail(); 
+        the_excerpt();
+    endwhile; 
+else: 
+    _e( 'Sorry, no posts matched your criteria.', 'textdomain' ); 
+endif; 
+?>
+//Individual POST
+<?php 
+if ( have_posts() ) : 
+    while ( have_posts() ) : the_post(); 
+        the_title( '<h1>', '</h1>' ); 
+        the_content();
+    endwhile; 
+else: 
+    _e( 'Sorry, no pages matched your criteria.', 'textdomain' ); 
+endif; 
+?>
+#Reference of LOOP https://developer.wordpress.org/themes/basics/the-loop/
+Multiple Loops #for_rewind_post [] #loop through the same query a second time #This is useful if you want to display the same query twice in different locations on a page.
+?php
+// Start the main loop
+if ( have_posts() ) : 
+    while ( have_posts() ) : the_post();
+        the_title();
+    endwhile;
+endif;
+ 
+// Use rewind_posts() to use the query a second time.
+rewind_posts();
+ 
+// Start a new loop
+while ( have_posts() ) : the_post();
+    the_content();
+endwhile;
+?>
+Creating secondary queries and loops
+#A common example of this, as shown below, is displaying a single post with a list of posts from the same category below the single post.
+<?php
+// The main query.
+if ( have_posts() ) : 
+    while ( have_posts() ) : the_post();
+        the_title();
+        the_content();
+    endwhile;
+else :
+    // When no posts are found, output this text.
+    _e( 'Sorry, no posts matched your criteria.' );
+endif;
+wp_reset_postdata();                                                        
+ 
+/*
+ * The secondary query. Note that you can use any category name here. In our example,
+ * we use "example-category".
+ */
+$secondary_query = new WP_Query( 'category_name=example-category' );        
+ 
+// The second loop. 
+if ( $secondary_query->have_posts() )
+    echo '<ul>';
+    while ( $secondary_query->have_posts() ) : $secondary_query->the_post();
+        the_title( '<li>', '</li>' );
+     endwhile;
+     echo '</ul>';
+endif;
+wp_reset_postdata();
+?>
+wp_reset_postdata() to reset the post data.
+//Registering a Sidebar #Registering a Sidebar
+To use sidebars, you must register them in functions.php.
+To begin, register_sidebar() has several parameters that should always be defined regardless of whether they are marked as optional. These include x, y, and z.
+function themename_widgets_init() {
+    register_sidebar( array(
+        'name'          => __( 'Primary Sidebar', 'theme_name' ),
+        'id'            => 'sidebar-1',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+ 
+    register_sidebar( array(
+        'name'          => __( 'Secondary Sidebar', 'theme_name' ),
+        'id'            => 'sidebar-2',
+        'before_widget' => '<ul><li id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</li></ul>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+} 
+//Register sidebar 
+add_action( 'widgets_init', 'my_register_sidebars' );
+function my_register_sidebars() {
+    /* Register the 'primary' sidebar. */
+    register_sidebar(
+        array(
+            'id'            => 'primary',
+            'name'          => __( 'Primary Sidebar' ),
+            'description'   => __( 'A short description of the sidebar.' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+    /* Repeat register_sidebar() code for additional sidebars. */
+}
+//sidebar registering https://developer.wordpress.org/themes/functionality/sidebars/  sidebar reference 
+//functionality widgets creation https://developer.wordpress.org/themes/functionality/widgets/
+In your theme’s functions.php, you need to register your menu(s). This sets the name that will appear at Appearance -> Menus.
+First of all, you will use register_nav_menus() to register the menu.
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'header-menu' => __( 'Header Menu' ),
+      'extra-menu' => __( 'Extra Menu' )
+     )
+   );
+ }
+ add_action( 'init', 'register_my_menus' );
+//Display Menus 
